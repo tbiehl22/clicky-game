@@ -1,1 +1,2 @@
-export { default } from "./MemoryCard";
+// export { MemoryCard } from "./MemoryCard"
+export const MemoryCard = () => {}

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import MemoryCard from '../MemoryCard';
+import React from 'react';
+import { MemoryCard } from '../MemoryCard';
 import images from "../../images.json";
 import "./MainGameContainer.css";
 
-class MainGameContainer extends Component {
+class MainGameContainer extends React.Component {
 	state = {
 		images,
 		message: "Click one of the logos to begin!",
