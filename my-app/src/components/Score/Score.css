@@ -5,9 +5,9 @@
     z-index: +1;
     width: 100%;
     line-height: 1em;
-    padding: 0;
+    padding: 7px;
     margin: 0;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0);
   }
   div.gameScore {
   
@@ -16,13 +16,14 @@
   h3.score {
     margin-top: 5px;
     padding: 0;
-    font-weight: 600;
+    font-weight: 50px;
     font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: impact;
     color: white;
   }
   h3.status{
     margin: 0;
     padding: 0;
     color: red;
+    font-family: impact;
   }

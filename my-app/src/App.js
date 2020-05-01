@@ -62,7 +62,7 @@ class App extends Component {
           ))}
         </Wrapper>
         <footer>
-          <p>&copy;2020 Tim Biehl </p>
+          <p>&copy;2020 Tim Biehl</p>
         </footer>
         
     </div>
