@@ -1,14 +1,12 @@
-// This optional code is used to register a service worker.
-// register() is not called by default.
+// In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
 // it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on subsequent visits to a page, after all the
-// existing tabs open on the page have been closed, since previously cached
-// resources are updated in the background.
+// will only see deployed updates on the "N+1" visit to a page, since previously
+// cached resources are updated in the background.
 
-// To learn more about the benefits of this model and instructions on how to
-// opt-in, read https://bit.ly/CRA-PWA
+// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
+// This link also includes instructions on opting out of this behavior.
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -37,15 +35,6 @@ export default function register() {
       if (isLocalhost) {
         // This is running on localhost. Lets check if a service worker still exists or not.
         checkValidServiceWorker(swUrl);
-
-        // Add some additional logging to localhost, pointing developers to the
-        // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(() => {
-          console.log(
-            'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://goo.gl/SC7cgQ'
-          );
-        });
       } else {
         // Is not local host. Just register service worker
         registerValidSW(swUrl);
