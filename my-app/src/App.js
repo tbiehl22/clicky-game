@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Score from "./components/Score";
-import pups from "./cards.json";
+import players from "./cards.json";
 import "./App.css";
 
 class App extends Component {
   state = {
-    pups,
+    athletes: players,
     clickedPlayerIds: [],
     score: 0,
     goal: 8,
@@ -18,22 +18,22 @@ class App extends Component {
     let clickedPlayerIds = this.state.clickedPlayerIds;
 
     if(clickedPlayerIds.includes(id)){
-      this.setState({ clickedPlayerIds: [], score: 0, status:  "Game Over! You lost. Click to play again!" });
+      this.setState({ clickedPlayerIds: [], score: 0, status:  "Game Over! You came up short. Click to play again!" });
       return;
     }else{
       clickedPlayerIds.push(id)
 
       if(clickedPlayerIds.length === 8){
-        this.setState({score: 8, status: "You Won! RIP CITY! Click to play again!", clickedPuppyIds: []});
+        this.setState({score: 8, status: "Blazers Win! RIP CITY! Click to play again!", clickedPlayerIds: []});
         console.log('You Win');
         return;
       }
 
-      this.setState({ pups, clickedPuppyIds: clickedPlayerIds, score: clickedPlayerIds.length, status: " " });
+      this.setState({ players, clickedPlayerIds: clickedPlayerIds, score: clickedPlayerIds.length, status: " " });
 
-      for (let i = pups.length - 1; i > 0; i--) {
+      for (let i = players.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
-        [pups[i], pups[j]] = [pups[j], pups[i]];
+        [players[i], players[j]] = [players[j], players[i]];
       }
     }
   }
@@ -52,17 +52,22 @@ class App extends Component {
                status={this.state.status}
                />
         <Wrapper>
-          {this.state.pups.map(puppy => (
+          {this.state.athletes.map(bballPlayer => (
             <Card
               shuffleScoreCard={this.shuffleScoreCard}
-              id={puppy.id}
-              key={puppy.id}
-              image={puppy.image}
+              id={bballPlayer.id}
+              key={bballPlayer.id}
+              image={bballPlayer.image}
             />
           ))}
         </Wrapper>
+        <footer>
+          <p>&copy;2020 Tim Biehl </p>
+        </footer>
         
     </div>
+
+    
     );
   }
 }
